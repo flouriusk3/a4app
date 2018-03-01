@@ -6,10 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  name = 'John Doe';
-  constructor() { }
+  name:string;
+  age:number;
+  email:string;
+  address:Address;
+  hobbies:string[];
+
+  constructor() {
+  	console.log('constructor ran.');
+   }
 
   ngOnInit() {
+  	console.log('ngOnInit ran.');
+
+  	this.name = 'John Doe';
+  	this.age = 30;
+  	this.address = {
+  		street: '50 Main St',
+  		city: 'Houston',
+  		state: "TX";
+  	}
+  	this.hobbies = ['Write code', 'Watch movies', 'Listen to music'];
   }
 
+}
+
+
+interface Address {
+	street:string,
+  	city:string,
+  	state:string
 }
